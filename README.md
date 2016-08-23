@@ -2,7 +2,7 @@
 
 This is a Client API with those characteristics:
 * Responsible to handle new clients registration
-* It is independent and should be called from a backend that controls all Rest API calls
+* It is independent and should be called from a backend that controls all Rest API calls (not included on this project)
 * It has features related to clients creation, update and search using the following requirements:
   * Client identification will be a CPF.
   * CPF must be valid.
@@ -16,7 +16,9 @@ The following practices were consistently used during the project:
 * SOLID
 * Repository Pattern - There are two samples, one using memory and another using file. To save to a DataBase, it is necessary just to create a new repo.
 
-The project was developed using .NET technology
+The project was developed using .NET technology with entity framework and the following tird party technology:
+- https://www.nuget.org/packages/Moq/
+- https://www.nuget.org/packages/newtonsoft.json/
 
 To ensure that everything is working, just run the tests.
 
