@@ -14,7 +14,7 @@ This is a Client API with those characteristics:
 The following practices were consistently used during the project:
 * TDD
 * SOLID
-* Repository Pattern - There are two samples, one using memory and another using file. To save to a DataBase, it is necessary just to createa new repo.
+* Repository Pattern - There are two samples, one using memory and another using file. To save to a DataBase, it is necessary just to create a new repo.
 
 The project was developed using .NET technology
 
