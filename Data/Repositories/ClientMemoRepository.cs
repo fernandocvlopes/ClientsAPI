@@ -1,26 +1,21 @@
 ﻿using ClientsAPI.Domain.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Configuration;
 
 namespace ClientsAPI.Data.Repositories
 {
     public class ClientMemoRepository : IClientRepository
     {
-        private MemoryStream _ms = new MemoryStream();
+        private string _jsonData;
 
         private IList<Client> clients;
         public IList<Client> Clients
         {
             get
             {
-                MemoryStream ms = new MemoryStream();
-
-
                 if (clients == null)
-                    clients = JsonConvert.DeserializeObject<IList<Client>>(File.ReadAllText(FILEPATH));
+                    clients = JsonConvert.DeserializeObject<IList<Client>>(_jsonData);
 
                 if (clients == null)
                     clients = new List<Client>();
@@ -31,23 +26,12 @@ namespace ClientsAPI.Data.Repositories
 
         public ClientMemoRepository()
         {
-            this.EnsureCreated();
-        }
-
-        private void EnsureCreated()
-        {
-            var myPage = "test string";
-            var repo = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(myPage));
-
-            if (!File.Exists(FILEPATH))
-                _ms = new MemoryStream();
+            _jsonData = string.Empty;
         }
 
         private void SaveChanges()
         {
-            var json = JsonConvert.SerializeObject(clients.ToArray(), Formatting.Indented);
-            //write string to file
-            File.WriteAllText(FILEPATH, json);
+            _jsonData = JsonConvert.SerializeObject(clients.ToArray(), Formatting.Indented);
         }
 
         public void Insert(Client client)
@@ -82,12 +66,9 @@ namespace ClientsAPI.Data.Repositories
 
         public void ClearData()
         {
-            if (File.Exists(FILEPATH))
-                File.Delete(FILEPATH);
-
+            _jsonData = string.Empty;
             clients = null;
 
-            this.EnsureCreated();
         }
 
     }

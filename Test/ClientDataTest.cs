@@ -11,10 +11,8 @@ namespace ClientsAPI.Test
     [TestClass]
     public class ClientDataTest
     {
-        private void PrepareDateToTest(ClientRepository repo, ClientServices clientServices)
+        private void PrepareDateToTest(IClientRepository repo, ClientServices clientServices)
         {
-            repo.ClearData();
-
             var Client1 = new ClientBuilder("Client Test 1", "391.004.767-06")
                             .withEverythingValid()
                             .build();
@@ -36,7 +34,7 @@ namespace ClientsAPI.Test
         public void Get_Client_By_CPF_Is_Working()
         {
             //Arrange
-            var repo = new ClientRepository();
+            var repo = new ClientMemoRepository();
             var clientServices = new ClientServices(repo);
 
             //Act
@@ -56,7 +54,7 @@ namespace ClientsAPI.Test
         public void Get_All_Clients_Is_Working()
         {
             //Arrange
-            var repo = new ClientRepository();
+            var repo = new ClientMemoRepository();
             var clientServices = new ClientServices(repo);
 
             //Act
@@ -71,7 +69,7 @@ namespace ClientsAPI.Test
         public void Get_Clients_By_Name_Is_Working()
         {
             //Arrange
-            var repo = new ClientRepository();
+            var repo = new ClientMemoRepository();
             var clientServices = new ClientServices(repo);
 
             //Act
@@ -86,7 +84,7 @@ namespace ClientsAPI.Test
         public void Update_Client_Is_Working()
         {
             //Arrange
-            var repo = new ClientRepository();
+            var repo = new ClientMemoRepository();
             var clientServices = new ClientServices(repo);
 
             //Act

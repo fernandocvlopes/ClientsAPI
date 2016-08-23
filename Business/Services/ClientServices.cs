@@ -19,7 +19,7 @@ namespace ClientsAPI.Business.Services
 
         public ClientServices()
         {
-            _repo = new ClientRepository();
+            _repo = new ClientFileRepository();
         }
 
         private bool IsValid(Client client, ClientResult result)

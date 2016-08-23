@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace ClientsAPI.Data.Repositories
 {
-    public class ClientRepository : IClientRepository
+    public class ClientFileRepository : IClientRepository
     {
         private readonly string FILEPATH = ConfigurationManager.AppSettings["StorageFilePath"].ToString();
 
@@ -26,7 +26,7 @@ namespace ClientsAPI.Data.Repositories
             }
         }
 
-        public ClientRepository()
+        public ClientFileRepository()
         {
             this.EnsureCreated();
         }
