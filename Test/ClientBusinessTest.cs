@@ -191,24 +191,3 @@ namespace ClientsAPI.Test
 }
 
 
-
-
-// Pensar se vamos ou não usar DB de vdd
-// Pensar se cpf services vale uma interface
-// Comentar método público
-
-
-//******Feito
-// Será necessário completar os testes
-// Será necessário validar se devo montar uma classe de retorno
-// Será necessário revisar os testes
-// Colocar mensagens em resourse
-// Parametrizar o caminho fisico que gravará o arquivo JSON
-// Formatar um padrão para o cpf (com ou sem pontuação)
-// Fazer interface dde Repo genérica usando T
-
-
-//******Não foi feito
-// Tem q ter uma rest para testar
-
-
