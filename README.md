@@ -11,12 +11,16 @@ This is a Client API with those characteristics:
 ** Client has a Name, Email and Marital Status.
 ** All data is mandatory, system will prevent registrations with missing information.
 
-IMPORTANT: In order to work properly, it is necessary to inform a valid path to persist data at Test\App.config on the StorageFilePath Key. This folder needs to have access to Read and Write.
-
 The following practices were consistently used during the project:
 * TDD
 * SOLID
-* Repository Pattern
+* Repository Pattern - There are two samples, one using memory and another using file. To save to a DataBase, it is necessary just to createa new repo.
+
+The project was developed using .NET technology
+
+To ensure that everything is working, just run the tests.
+
+IMPORTANT: In order to work properly, in case you want to use the file repo, it is necessary to inform a valid path to persist data at Test\App.config on the StorageFilePath Key. This folder needs to have access to Read and Write.
 
 Fernando Lopes
 fernando.cv.lopes@gmail.com
