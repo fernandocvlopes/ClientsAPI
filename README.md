@@ -16,7 +16,7 @@ The following practices were consistently used during the project:
 * SOLID
 * Repository Pattern - There are two samples, one using memory and another using file. To save to a DataBase, it is necessary just to create a new repo.
 
-The project was developed using .NET technology with entity framework and the following tird party technology:
+The project was developed using .NET technology with entity framework and the following third party technology:
 - https://www.nuget.org/packages/Moq/
 - https://www.nuget.org/packages/newtonsoft.json/
 
